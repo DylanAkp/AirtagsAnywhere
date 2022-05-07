@@ -1,0 +1,32 @@
+.airtags_map { height: 100vh; }
+.airtags_map { width: 100%; }
+
+.leaflet-popup-content-wrapper, .leaflet-popup.tip {
+    background-color: #1c1c1e;
+    color: #ffff;
+    opacity: 0.9;
+    font-family: 'Open Sans', sans-serif;
+    font-size: larger;
+    }
+
+  .custom-popup, .leaflet-popup-tip {
+    background: #1c1c1e;
+    border: none;
+    box-shadow: none;
+    opacity: 0.9;
+    }
+
+#sidebar {
+  z-index: 3;
+  position: absolute;
+}
+
+#collapser {
+  z-index: 2;
+  position: absolute;
+}
+
+#airmap {
+  z-index: 1;
+  position: absolute;
+}
