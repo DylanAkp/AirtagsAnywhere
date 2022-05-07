@@ -16,11 +16,6 @@
 With this project, you can see the airtags location on a simple web-app from any device.
 The idea of this project is to learn how Airtags location are stored and how to use them, it has been made for educational purposes.
 
-## 🚩 Disclaimer
-
-This is my first web project, it is certainly not optimized and certainly not very well done, although it works.
-Feel free to suggest improvements and report bugs.
-
 ## 🚀 Quick start
 
 ### You'll need
