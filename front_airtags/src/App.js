@@ -1,7 +1,6 @@
 import './App.css';
 import 'react-pro-sidebar/dist/css/styles.css';
 import React, { Component } from "react";
-import ReactDOM from "react-dom";
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet'
 import twemoji from "twemoji";
 import L from "leaflet";
