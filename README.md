@@ -28,7 +28,7 @@ The idea of this project is to learn how Airtags location are stored and how to 
 - Install NodeJS (https://nodejs.dev/download)
 - Clone the repository in a convenient location
 - Replace "`localhost`" with the local ip address of your Mac in `front_airtags/src/config.json`
-(or the external IP adddress if you want to open it outside of your network) 
+(or the external IP address if you want to open it outside of your network) 
 - run `npm install` in both back and front folder
 - run `npm start` in back then front folder
 - open `localhost:3000` on your browser and check if it's working
