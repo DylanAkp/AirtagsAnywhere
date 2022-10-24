@@ -23,7 +23,7 @@ The idea of this project is to learn how Airtags location are stored and how to 
 - A bit of time
 - Any device running MacOS that needs to be always on (to get airtags location and host the server)
 
-### Getting Started On MacOS
+### Getting Started On MacOS (Server)
 
 - Install NodeJS (https://nodejs.dev/download)
 - Clone the repository in a convenient location
@@ -33,7 +33,7 @@ The idea of this project is to learn how Airtags location are stored and how to 
 - run `npm start` in back then front folder
 - open `localhost:3000` on your browser and check if it's working
 
-### Getting Started On Your Non-Apple Device
+### Getting Started On Your Non-Apple Device (Client)
 
 - Type the IP of your Mac on your address bar, followed by :3000, login, and that's it !
 
