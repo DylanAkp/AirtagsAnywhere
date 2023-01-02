@@ -4,19 +4,14 @@ import React, { Component } from "react";
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet'
 import twemoji from "twemoji";
 import L from "leaflet";
-import { ProSidebar, SidebarHeader, SidebarContent, SidebarFooter } from 'react-pro-sidebar';
-import Button from '@mui/material/Button';
 import ModeNightIcon from '@mui/icons-material/ModeNight';
-import CompareArrowsIcon from '@mui/icons-material/CompareArrows';
 import CachedIcon from '@mui/icons-material/Cached';
 import IconButton from '@mui/material/IconButton';
 import BatteryFullIcon from '@mui/icons-material/BatteryFull';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import AccessTimeIcon from '@mui/icons-material/AccessTime';
 import DirectionsIcon from '@mui/icons-material/Directions';
-import Fab from '@mui/material/Fab';
 import configData from "./config.json";
-import './custom.scss';
 
 function refreshPage() {
   window.location.reload(false);
@@ -45,7 +40,7 @@ class App extends Component {
     this.dark = "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png";
   }
 
-  onClick() {
+  onDarkModeClick() {
     this.setState({
       colorMode: this.state.colorMode === "light" ? "dark" : "light"
     });
@@ -55,15 +50,6 @@ class App extends Component {
       );
     }
   }
-
-  onCollapseClick() {
-    this.setState({
-      collapsed: this.state.collapsed === true ? false : true
-    });
-    console.log(this.state.collapsed);
-  }
-
-
 
   componentDidMount() {
     fetch(`http://${configData.SERVER_IP}:3890/json`)
@@ -83,20 +69,8 @@ class App extends Component {
     return (
 
       <div>
-        <Fab color="primary"
-          onClick={this.onCollapseClick.bind(this)}
-          id="collapser"
-          variant="contained"
-          style={{
-            margin: 5,
-            borderRadius: 20,
-          }}>
-          <CompareArrowsIcon />
-        </Fab>
-        <ProSidebar
-          id="sidebar"
-          collapsed={this.state.collapsed}>
-          <SidebarHeader style={{
+        <div class="sidebar">
+          <div style={{
             display: "flex",
             justifyContent: "center",
             alignItems: "center",
@@ -108,20 +82,12 @@ class App extends Component {
             <img src="images/logo.png" alt="AirtagsAnywhere Logo"></img> <span style={{
               fontSize: 25
             }}>AirtagsAnywhere</span>
-          </SidebarHeader>
-          <SidebarContent style={{
+          </div>
+          <div style={{
             padding: 5,
           }}>
             {this.state.data.map(air => (
-              <Button
-
-                style={{
-                  margin: 10,
-                  borderRadius: 30,
-                  textTransform: 'none',
-                  fontFamily: 'Roboto',
-                  opacity: 0.8,
-                }}
+              <div class="button"
                 variant="contained" size="small"
                 onClick={() => window.open('https://www.google.com/maps?q=' + air.coords[0] + ',' + air.coords[1], '_blank')}>
 
@@ -129,10 +95,10 @@ class App extends Component {
                   <LocationOnIcon fontSize="small" style={{ position: 'relative', top: '5px' }} /> {air.address}<br />
                   <AccessTimeIcon fontSize="small" style={{ position: 'relative', top: '5px' }} /> {air.date}<br /><br />
                 </center>
-              </Button>
+              </div>
             ))}
-          </SidebarContent>
-          <SidebarFooter
+          </div>
+          <div
             style={{
               display: "flex",
               justifyContent: "center",
@@ -140,13 +106,8 @@ class App extends Component {
               padding: 5,
             }}>
             <IconButton color="primary"
-              onClick={this.onClick.bind(this)}>
+              onClick={this.onDarkModeClick.bind(this)}>
               <ModeNightIcon />
-
-            </IconButton>
-            <IconButton color="primary"
-              onClick={this.onCollapseClick.bind(this)}>
-              <CompareArrowsIcon />
             </IconButton>
 
             <IconButton color="primary"
@@ -155,8 +116,8 @@ class App extends Component {
             </IconButton>
 
 
-          </SidebarFooter>
-        </ProSidebar>
+          </div>
+        </div>
         <MapContainer
           id="airmap"
           center={position}
@@ -183,7 +144,7 @@ class App extends Component {
                   <span style={{ fontSize: 25 }}>{air.emote} {air.name} </span> | <BatteryFullIcon style={{ position: 'relative', top: '5px' }} /> {air.battery}% <br />
                   <br /><LocationOnIcon style={{ position: 'relative', top: '5px' }} /> {air.address} <br /><AccessTimeIcon style={{ position: 'relative', top: '5px' }} /> {air.date} <br />
                   <br />
-                  <Button endIcon={<DirectionsIcon />}
+                  <div class="button" endIcon={<DirectionsIcon />}
                     style={{
                       margin: 10,
                       borderRadius: 30,
@@ -193,9 +154,8 @@ class App extends Component {
                     }}
                     variant="contained" size="small"
                     onClick={() => window.open('https://www.google.com/maps?q=' + air.coords[0] + ',' + air.coords[1], '_blank')}>
-
                     <center>Directions</center>
-                  </Button>
+                  </div>
                 </center>
               </Popup>
             </Marker>

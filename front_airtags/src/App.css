@@ -1,5 +1,7 @@
-.airtags_map { height: 100vh; }
-.airtags_map { width: 100%; }
+.airtags_map { 
+  height: 100vh;
+  width: 100%;
+}
 
 .leaflet-popup-content-wrapper, .leaflet-popup.tip {
     background-color: #1c1c1e;
@@ -16,17 +18,27 @@
     opacity: 0.9;
     }
 
-#sidebar {
-  z-index: 3;
-  position: absolute;
-}
-
-#collapser {
-  z-index: 2;
-  position: absolute;
-}
-
 #airmap {
-  z-index: 1;
   position: absolute;
+  z-index: 1;
+}
+
+.button {
+  background-color:cadetblue;
+  color: white;
+  margin: 15px;
+  border-radius: 20px;
+  font-family: Roboto;
+  padding: 10px;
+}
+
+.sidebar {
+  height: 100vh;
+  background-color: #000000CC;
+  backdrop-filter: blur(10px);
+  color: white;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
 }
