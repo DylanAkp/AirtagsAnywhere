@@ -11,7 +11,11 @@ app.get('/json', (req, res) => {
         const data = fs.readFileSync(process.env.HOME + '/Library/Caches/com.apple.findmy.fmipcore/Items.data', 'utf8');
         let parsed_data = JSON.parse(data);
         let filtered_data = parsed_data
-            .filter(appleDevice => appleDevice.productType.type === "b389")
+            .filter(appleDevice => appleDevice.productType && appleDevice.productType.type === "b389" &&
+            appleDevice.batteryStatus && appleDevice.address && appleDevice.address.formattedAddressLines &&
+            appleDevice.location && appleDevice.location.latitude && 
+            appleDevice.location.longitude && appleDevice.location.timeStamp && appleDevice.role && appleDevice.role.emoji && 
+            appleDevice.serialNumber)
             .map(appleDevice => {
                 return {
                     name: appleDevice.name,
