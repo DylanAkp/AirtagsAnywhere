@@ -33,7 +33,6 @@
 }
 
 .sidebar {
-  height: 100vh;
   background-color: #000000CC;
   backdrop-filter: blur(10px);
   color: white;
@@ -41,4 +40,28 @@
   top: 0;
   left: 0;
   z-index: 2;
+  border-radius: 0px 0px 15px 15px;
+}
+
+.airlist {
+  overflow-y: scroll;
+  padding: 5px;
+}
+
+@media (max-width: 768px ) {
+  .sidebar {
+    width: 100%;
+  }
+
+  .airlist {
+    max-height: 300px;
+  }
+}
+
+.emoji-tooltip {
+  background-color: #00000000;
+  border: 0px solid #00000000;
+  box-shadow: 0 1px 3px rgba(0,0,0,0);
+  font-size: 50px;
+  align-items: center;
 }
