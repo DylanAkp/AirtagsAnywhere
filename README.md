@@ -1,3 +1,10 @@
+## ❌ WARNING
+
+I don't have a Mac anymore, for now I can't maintain this project.
+If I get a Mac and Airtags one day, I will do a complete rewrite with a Android/Windows/Linux/ChromeOS client.
+
+Feel free to open a PR if you have some fixes/improvements.
+
 ## Interface
 
 <details>
